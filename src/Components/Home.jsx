@@ -23,8 +23,8 @@ function Home() {
               The ultimate marketplace for developers to discover, purchase, and sell high-quality code snippets, templates, and complete projects
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center w-full my-2 sm:my-4">
-              <button className="p-4 sm:p-[23px] w-[90vw] max-w-[250px] bg-white rounded-[12px] text-blue-600 font-semibold text-lg sm:text-[20px]">Browse Marketplace</button>
-              <button className="p-4 sm:p-[23px] w-[90vw] max-w-[180px] border-3 border-white rounded-[12px] text-white font-semibold text-lg sm:text-[20px]">Start Selling</button>
+              <button className="p-4 sm:p-[23px] w-[90vw] max-w-[250px] bg-white rounded-[12px] text-blue-600 cursor-pointer font-semibold text-lg sm:text-[20px]">Browse Marketplace</button>
+              <button className="p-4 sm:p-[23px] w-[90vw] max-w-[180px] border-3 border-white rounded-[12px] text-white cursor-pointer font-semibold text-lg sm:text-[20px]">Start Selling</button>
             </div>
             <div className="h-[80px] w-full flex flex-wrap justify-center items-center gap-8 sm:gap-20 md:gap-32 lg:gap-44">
               <p className="text-center min-w-[100px]">
@@ -39,10 +39,11 @@ function Home() {
                 <span className="font-bold text-2xl sm:text-3xl md:text-4xl text-white">98%</span><br />
                 <span className="text-white">Satisfaction</span>
               </p>
-              <p className="text-center min-w-[100px]">
+               <p className="text-center min-w-[100px]">
                 <span className="font-bold text-2xl sm:text-3xl md:text-4xl text-white">24/7</span><br />
                 <span className="text-white">Support</span>
               </p>
+              
             </div>
           </div>
         </div>

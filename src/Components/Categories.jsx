@@ -95,7 +95,7 @@ function Categories() {
 
         {/* Button */}
         <div className="flex justify-center mt-4">
-          <button className="px-10 py-5 bg-blue-700 rounded-2xl font-medium text-xl font-[Outfit] text-white hover:scale-105 transition-all duration-200 hover:bg-blue-800">
+          <button className="px-10 py-5 bg-blue-700 rounded-2xl font-medium text-xl font-[Outfit] text-white hover:scale-105 transition-all duration-200 hover:bg-blue-800 cursor-pointer">
             View all Categories
           </button>
         </div>

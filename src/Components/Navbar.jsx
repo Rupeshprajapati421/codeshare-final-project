@@ -23,14 +23,14 @@ function Navbar() {
 
         {/* Desktop Auth Buttons */}
         <div className='hidden md:flex h-full w-[250px] bg-white items-center gap-[20px] mr-[20px]'>
-          <a className='text-[18px]' href="#signin"> Signin</a>
-          <button className='p-[12px] w-[130px] rounded-[10px] bg-blue-600 text-white'>Get started</button>
+          <a className='text-[18px] hover:text-blue-500 cursor-pointer ' href="#signin"> Signin</a>
+          <button className='p-[12px] w-[130px] cursor-pointer  hover:bg-blue-800 transition-colors duration-300 rounded-[10px] bg-blue-600 text-white'>Get started</button>
         </div>
 
        {/* Mobile Menu Button */}
-<div className='md:hidden flex items-center mr-2'>  {/* reduced from mr-4 to mr-2 */}
+<div className='md:hidden flex items-center'>  
   <button onClick={() => setMenuOpen(!menuOpen)} className='focus:outline-none'>
-    <svg className='w-8 h-8 text-blue-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+    <svg className='w-8 h-8 text-blue-700 ' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
       <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M4 6h16M4 12h16M4 18h16'></path>
     </svg>
   </button>
