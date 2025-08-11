@@ -6,7 +6,7 @@ function Navbar() {
     <>
       <header className='w-full bg-white h-[70px] fixed top-0 left-0 right-0 z-1000 flex items-center justify-between'>
         {/* Logo */}
-        <div className='h-full w-[200px] bg-white flex items-center justify-center ml-[10px] sm:ml-[40px]'>
+  <div className='h-full w-[200px] bg-white flex items-center justify-center ml-2 sm:ml-4'>
           <img className='h-full w-[70px] sm:w-[100px]' src="https://img.freepik.com/premium-vector/web-development-concept-website-coding-web-page-3d-vector-icon-cartoon-minimal-style_365941-672.jpg" alt="codeshare" />
           <h2 className='text-[22px] sm:text-[30px] font-extrabold font-[Pacifico] ml-2'>CodeShare</h2>
         </div>
