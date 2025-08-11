@@ -15,9 +15,9 @@ function Navbar() {
         <div className='hidden md:flex h-full w-[500px] bg-white items-center justify-center'>
           <ul className='flex items-center justify-center gap-7 text-[19px] font-[Outfit]  '>
             <a  className='hover:text-blue-500 cursor-pointer' href="#home "><li className=''>Home</li></a>
-            <a href="#categories"><li>Categories</li></a>
-            <a href="#sell code"><li>Sell Code</li></a>
-            <a href="#Blog"><li>Blog</li></a>
+            <a className='hover:text-blue-500 cursor-pointer' href="#categories"><li>Categories</li></a>
+            <a className='hover:text-blue-500 cursor-pointer' href="#sell code"><li>Sell Code</li></a>
+            <a className='hover:text-blue-500 cursor-pointer' href="#Blog"><li>Blog</li></a>
           </ul>
         </div>
 
@@ -27,14 +27,15 @@ function Navbar() {
           <button className='p-[12px] w-[130px] rounded-[10px] bg-blue-600 text-white'>Get started</button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className='md:hidden flex items-center mr-4'>
-          <button onClick={() => setMenuOpen(!menuOpen)} className='focus:outline-none'>
-            <svg className='w-8 h-8 text-blue-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M4 6h16M4 12h16M4 18h16'></path>
-            </svg>
-          </button>
-        </div>
+       {/* Mobile Menu Button */}
+<div className='md:hidden flex items-center mr-2'>  {/* reduced from mr-4 to mr-2 */}
+  <button onClick={() => setMenuOpen(!menuOpen)} className='focus:outline-none'>
+    <svg className='w-8 h-8 text-blue-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M4 6h16M4 12h16M4 18h16'></path>
+    </svg>
+  </button>
+</div>
+
 
         {/* Mobile Menu Dropdown */}
         {menuOpen && (
