@@ -2,7 +2,9 @@ import React from 'react';
 import { FaReact, FaMobileAlt } from 'react-icons/fa';
 import { Brain, Palette } from 'lucide-react';
 import { LayoutTemplate } from 'lucide-react';
-
+import { Smartphone } from "lucide-react";
+import { Database } from "lucide-react";
+import { Loader } from "lucide-react";
 
 function Categories() {
   const categories = [
@@ -26,31 +28,31 @@ function Categories() {
     },
     {
       icon: <Brain />,
-      heading: "AI & ML",
+      heading: "Backend APIs",
       description: "Machine learning models, datasets, and utilities.",
       bgColor: "bg-white",
       textColor: "text-purple-600",
       price: "₹1199",
     },
     {
-      icon: <Palette />,
-      heading: "UI/UX Design",
+      icon: <Smartphone />,
+      heading: "Mobile Apps",
       description: "Design systems, icons, and prototyping assets.",
       bgColor: "bg-white",
       textColor: "text-pink-600",
       price: "₹499",
     },
     {
-      icon: "🛠️",
-      heading: "Dev Tools",
+      icon: <  Database/>,
+      heading: "Database scripts",
       description: "Productivity tools and utilities for developers.",
       bgColor: "bg-white",
       textColor: "text-yellow-600",
       price: "₹599",
     },
     {
-      icon: "🔒",
-      heading: "Security",
+      icon: <Loader/>,
+      heading: "Css animations",
       description: "Authentication, encryption, and security libraries.",
       bgColor: "bg-white",
       textColor: "text-red-600",
@@ -77,8 +79,12 @@ function Categories() {
               key={idx}
               className={`${cat.bgColor} rounded-xl shadow-2xl p-4 sm:p-6 w-[90vw] max-w-[320px] h-80 flex flex-col items-center hover:scale-105 transition-transform`}
             >
-              <div className={`${cat.textColor} text-5xl sm:text-6xl mb-6 sm:mb-8`}>
-                {cat.icon}
+             
+                <div className={`${cat.textColor} flex items-center justify-center mb-6 sm:mb-8`} style={{height: '90px', width: '90px'}}>
+                {React.isValidElement(cat.icon)
+                  ? React.cloneElement(cat.icon, { size: 60 })
+                  : <span style={{fontSize: '80px', lineHeight: 1}}>{cat.icon}</span>
+}
               </div>
               <h2 className="font-bold text-xl sm:text-2xl mb-1">{cat.heading}</h2>
               <p className="text-gray-700 mb-3 text-center text-base sm:text-lg">{cat.description}</p>

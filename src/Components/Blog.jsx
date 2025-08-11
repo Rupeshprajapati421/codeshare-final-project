@@ -1,23 +1,31 @@
 import React from 'react'
 import blogImg from '../assets/blog.jpg';
+import { Search } from "lucide-react";
+import { ShoppingBag } from 'lucide-react';
+import { Download } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 
 function Blog() {
   const steps = [
     {
-      icon: '',
-      description: 'Sign up and create your developer profile.'
+      icon:<Search/>,
+       heading: "Browse & Discover",
+      description: "Explore thousands of high-quality code assets from talented developers",
     },
     {
-      icon: '',
-      description: 'Upload your code snippets, templates, or projects.'
+     icon:< ShoppingBag/>,
+      heading:"Purchase Instantly",
+      description:"Buy code with secure payments and get immediate access to download files"
     },
     {
-      icon: '',
-      description: 'Browse and purchase high-quality code from others.'
+      icon:<Download/>,
+       heading:"Download & Use",
+      description:"Get complete source code with documentation and use in your projects"
     },
-    {
-      icon: '',
-      description: 'Earn money when your code is sold to the community.'
+    {  
+      icon:< ArrowUp />,
+       heading:"Sell Your Code",
+      description:"Upload your own code assets and earn money from your programming skills"
     }
   ];
   return (
@@ -27,13 +35,13 @@ function Blog() {
         <p className='text-lg sm:text-2xl mt-4 text-gray-500'>Join thousands of developers who trust our platform for buying and selling code</p>
       </div>
 
-      <div className='w-[98vw] max-w-[1400px] min-h-[900px] flex flex-col justify-baseline items-center p-2 sm:p-6 md:p-10 gap-y-8 sm:gap-y-10 rounded-2xl shadow-2xl bg-white mt-6'>
+      <div className='w-[98vw] max-w-[1400px] min-h-[900px]  flex flex-col justify-baseline items-center p-2 sm:p-6 md:p-10 gap-y-8 sm:gap-y-10 rounded-2xl shadow-2xl  mt-6'>
         <div className='w-full flex flex-col md:flex-row gap-6 md:gap-10 pt-6 md:pt-10 items-center justify-center'>
           {steps.map((step, idx) => (
             <div key={idx} className='flex flex-col items-center justify-center bg-white shadow-2xl rounded-2xl p-6 sm:p-8 w-[90vw] max-w-[300px] h-[180px] sm:h-[220px] md:h-85'>
-              <span className='text-5xl sm:text-7xl mb-4 sm:mb-6'>{step.icon}</span>
-              <h1 className='text-2xl sm:text-3xl md:text-4xl text-black'>{step.heading}</h1>
-              <p className='text-base sm:text-lg md:text-xl text-gray-800 font-semibold'>{step.description}</p>
+              <span className='sm:text-2xl text-white text-2xl text-center flex justify-center items-center mb-4 h-[90px] w-[90px] bg-gradient-to-b from-blue-500 to-blue-200  font-extrabold sm:mb-6 rounded-2xl'>{step.icon}</span>
+              <h1 className='text-xl sm:text-xl md:text-2xl font-bold text-black'>{step.heading}</h1>
+              <p className='text-base sm:text-lg pt-3 text-gray-800 '>{step.description}</p>
             </div>
           ))}
         </div>

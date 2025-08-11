@@ -13,8 +13,8 @@ function Navbar() {
 
         {/* Desktop Menu */}
         <div className='hidden md:flex h-full w-[500px] bg-white items-center justify-center'>
-          <ul className='flex items-center justify-center gap-7 text-[19px] font-[Outfit]'>
-            <a href="#home"><li>Home</li></a>
+          <ul className='flex items-center justify-center gap-7 text-[19px] font-[Outfit]  '>
+            <a  className='hover:text-blue-500 cursor-pointer' href="#home "><li className=''>Home</li></a>
             <a href="#categories"><li>Categories</li></a>
             <a href="#sell code"><li>Sell Code</li></a>
             <a href="#Blog"><li>Blog</li></a>

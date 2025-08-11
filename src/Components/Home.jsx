@@ -16,8 +16,8 @@ function Home() {
         <div className="h-screen w-full bg-gradient-to-br from-blue-500/80 via-blue-500/80 to-purple-500 flex items-center justify-center">
           <div className="h-[90%] w-[95%] sm:w-[80%] md:w-[70%] lg:w-[60%] flex flex-col items-center justify-center p-2 sm:p-4 md:p-8 text-center gap-6 sm:gap-8 mt-[60px] sm:mt-[72px]">
             <h1 className="w-full mt-10 sm:mt-[70px]">
-              <span className="font-extrabold text-4xl sm:text-6xl md:text-7xl text-white ml-2 sm:ml-[20px] block">Buy & Sell</span>
-              <span className="font-extrabold text-4xl sm:text-6xl md:text-7xl bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent block">Premium Code</span>
+              <span className="font-extrabold text-4xl sm:text-6xl md:text-7xl text-white font-[Outfit] ml-2 sm:ml-[20px] block ">Buy & Sell</span>
+              <span className="font-extrabold text-4xl sm:text-6xl font-[Outfit] md:text-7xl bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent block">Premium Code</span>
             </h1>
             <p className="text-lg sm:text-2xl md:text-[25px] font-semibold text-white w-full">
               The ultimate marketplace for developers to discover, purchase, and sell high-quality code snippets, templates, and complete projects
