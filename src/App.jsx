@@ -1,16 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
 import './App.css';
-
-import Navbar from './Components/Navbar';
-import Home from './Components/Home';
-import Categories from './Components/Categories';
-
-import Blog from './Components/Blog';
-import Sellcode from "./Components/Sellcode"; 
-
-import Footer from './Components/Footer';
+import Allproduct from './Pages/allproduct';
+import {BrowserRouter as Router, Routes,Route } from 'react-router-dom'
+import Login from './Components/Login';
 
 
 
@@ -19,13 +12,15 @@ function App() {
 
   return (
     <>
-      
-      <Navbar/>
-      <Home/>
-      <Categories/>
-      <Sellcode/>
-      <Blog/>
-      <Footer/>
+     <Router>
+
+      <Routes>
+      <Route path="/" element={<Allproduct />} />
+      <Route path="/login" element={<Login />} />
+     
+     </Routes>
+     </Router>
+     
       
     </>
   )

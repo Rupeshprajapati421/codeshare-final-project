@@ -1,55 +1,74 @@
-import React from 'react'
-import image from '../assets/background.jpg'
+import React from "react";
+import image from "../assets/background.jpg";
 
 function Home() {
   return (
     <>
       <div
         id="home"
-        className="w-full h-screen bg-amber-200"
+        className="w-full h-screen relative overflow-hidden"
         style={{
           backgroundImage: `url(${image})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
-        <div className="h-screen w-full bg-gradient-to-br from-blue-500/80 via-blue-500/80 to-purple-500 flex items-center justify-center">
-          <div className="h-[90%] w-[95%] sm:w-[80%] md:w-[70%] lg:w-[60%] flex flex-col items-center justify-center p-2 sm:p-4 md:p-8 text-center gap-6 sm:gap-8 mt-[60px] sm:mt-[72px]">
-            <h1 className="w-full mt-10 sm:mt-[70px]">
-              <span className="font-extrabold text-4xl sm:text-6xl md:text-7xl text-white font-[Outfit] ml-2 sm:ml-[20px] block ">Buy & Sell</span>
-              <span className="font-extrabold text-4xl sm:text-6xl font-[Outfit] md:text-7xl bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent block">Premium Code</span>
+        {/* Overlay Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/80 via-purple-600/70 to-indigo-900/80 backdrop-blur-[2px]" />
+
+        {/* Content Container */}
+        <div className="relative z-10 flex items-center justify-center h-full text-center px-4 sm:px-6 md:px-12">
+          <div className="max-w-4xl flex flex-col gap-8 animate-fadeIn">
+            {/* Heading */}
+            <h1 className="space-y-2">
+              <span className="block font-extrabold text-4xl sm:text-6xl md:text-7xl text-white tracking-tight">
+                Buy & Sell
+              </span>
+              <span className="block font-extrabold text-4xl sm:text-6xl md:text-7xl bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent tracking-tight">
+                Premium Code
+              </span>
             </h1>
-            <p className="text-lg sm:text-2xl md:text-[25px] font-semibold text-white w-full">
-              The ultimate marketplace for developers to discover, purchase, and sell high-quality code snippets, templates, and complete projects
+
+            {/* Description */}
+            <p className="text-lg sm:text-2xl md:text-[22px] text-white/90 font-medium leading-relaxed">
+              The ultimate marketplace for developers to discover, purchase, and
+              sell high-quality code snippets, templates, and complete projects.
             </p>
-            <div className="flex flex-col md:flex-row gap-4 justify-center items-center w-full my-2 sm:my-4">
-              <button className="p-4 sm:p-[23px] w-[90vw] max-w-[250px] bg-white rounded-[12px] text-blue-600 cursor-pointer font-semibold text-lg sm:text-[20px]">Browse Marketplace</button>
-              <button className="p-4 sm:p-[23px] w-[90vw] max-w-[180px] border-3 border-white rounded-[12px] text-white cursor-pointer font-semibold text-lg sm:text-[20px]">Start Selling</button>
+
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button className="px-8 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-xl font-semibold text-lg shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
+                Browse Marketplace
+              </button>
+              <button className="px-8 py-4 border-2 border-white text-white rounded-xl font-semibold text-lg hover:bg-white hover:text-blue-700 transition-all duration-300">
+                Start Selling
+              </button>
             </div>
-            <div className="h-[80px] w-full flex flex-wrap justify-center items-center gap-8 sm:gap-20 md:gap-32 lg:gap-44">
-              <p className="text-center min-w-[100px]">
-                <span className="font-bold text-2xl sm:text-3xl md:text-4xl text-white">50K+</span><br />
-                <span className="text-white">Code Items</span>
-              </p>
-              <p className="text-center min-w-[100px]">
-                <span className="font-bold text-2xl sm:text-3xl md:text-4xl text-white">15K+</span><br />
-                <span className="text-white">Developers</span>
-              </p>
-              <p className="text-center min-w-[100px]">
-                <span className="font-bold text-2xl sm:text-3xl md:text-4xl text-white">98%</span><br />
-                <span className="text-white">Satisfaction</span>
-              </p>
-               <p className="text-center min-w-[100px]">
-                <span className="font-bold text-2xl sm:text-3xl md:text-4xl text-white">24/7</span><br />
-                <span className="text-white">Support</span>
-              </p>
-              
+
+            {/* Stats */}
+            <div className="flex flex-wrap justify-center gap-12 sm:gap-20 mt-6">
+              {[
+                { value: "50K+", label: "Code Items" },
+                { value: "15K+", label: "Developers" },
+                { value: "98%", label: "Satisfaction" },
+                { value: "24/7", label: "Support" },
+              ].map((stat, index) => (
+                <div
+                  key={index}
+                  className="text-white animate-slideUp opacity-90 hover:opacity-100 transition-all"
+                >
+                  <span className="block font-bold text-3xl sm:text-4xl">
+                    {stat.value}
+                  </span>
+                  <span className="text-sm sm:text-base">{stat.label}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;

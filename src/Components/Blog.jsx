@@ -1,69 +1,92 @@
 import React from 'react'
 import blogImg from '../assets/blog.jpg';
-import { Search } from "lucide-react";
-import { ShoppingBag } from 'lucide-react';
-import { Download } from "lucide-react";
-import { ArrowUp } from "lucide-react";
+import { Search, ShoppingBag, Download, ArrowUp } from "lucide-react";
 
 function Blog() {
   const steps = [
     {
-      icon:<Search/>,
-       heading: "Browse & Discover",
+      icon: <Search size={40} />,
+      heading: "Browse & Discover",
       description: "Explore thousands of high-quality code assets from talented developers",
     },
     {
-     icon:< ShoppingBag/>,
-      heading:"Purchase Instantly",
-      description:"Buy code with secure payments and get immediate access to download files"
+      icon: <ShoppingBag size={40} />,
+      heading: "Purchase Instantly",
+      description: "Buy code with secure payments and get immediate access to download files"
     },
     {
-      icon:<Download/>,
-       heading:"Download & Use",
-      description:"Get complete source code with documentation and use in your projects"
+      icon: <Download size={40} />,
+      heading: "Download & Use",
+      description: "Get complete source code with documentation and use in your projects"
     },
-    {  
-      icon:< ArrowUp />,
-       heading:"Sell Your Code",
-      description:"Upload your own code assets and earn money from your programming skills"
+    {
+      icon: <ArrowUp size={40} />,
+      heading: "Sell Your Code",
+      description: "Upload your own code assets and earn money from your programming skills"
     }
   ];
+
   return (
-    <div id="Blog" className='w-full flex flex-col text-center items-center'>
-      <div className='w-[95vw] max-w-[800px] h-auto bg-white p-4 sm:p-8 flex flex-col justify-center text-center items-center rounded-2xl shadow-xl mt-4'>
-        <h1 className='font-bold text-3xl sm:text-5xl md:text-6xl'>How CodeShare Works</h1>
-        <p className='text-lg sm:text-2xl mt-4 text-gray-500'>Join thousands of developers who trust our platform for buying and selling code</p>
+    <div id="Blog" className="w-full flex flex-col text-center items-center py-10 bg-white">
+      
+      {/* Section Header */}
+      <div className="w-[95vw] max-w-[800px] p-6 sm:p-10 bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-2xl shadow-lg">
+        <h1 className="font-extrabold text-3xl sm:text-5xl md:text-6xl text-gray-900">
+          How CodeShare Works
+        </h1>
+        <p className="text-lg sm:text-2xl mt-4 text-gray-600">
+          Join thousands of developers who trust our platform for buying and selling code
+        </p>
       </div>
 
-      <div className='w-[98vw] max-w-[1400px] min-h-[900px]  flex flex-col justify-baseline items-center p-2 sm:p-6 md:p-10 gap-y-8 sm:gap-y-10 rounded-2xl shadow-2xl  mt-6 '>
-        <div className='w-full flex flex-col md:flex-row gap-6 md:gap-10 pt-6 md:pt-10 items-center justify-center '>
-          {steps.map((step, idx) => (
-            <div key={idx} className='flex flex-col items-center justify-center bg-white shadow-2xl rounded-2xl p-6 sm:p-8 w-[90vw] max-w-[300px] h-[180px] sm:h-[220px] md:h-85 hover:shadow-lg hover:scale-108 transition-all duration-300'>
-              <span className='sm:text-2xl text-white text-2xl text-center flex justify-center items-center mb-4 h-[90px] w-[90px] bg-gradient-to-b from-blue-500 to-blue-200  font-extrabold sm:mb-6 rounded-2xl'>{step.icon}</span>
-              <h1 className='text-xl sm:text-xl md:text-2xl font-bold text-black'>{step.heading}</h1>
-              <p className='text-base sm:text-lg pt-3 text-gray-800 '>{step.description}</p>
+      {/* Steps */}
+      <div className="w-full max-w-[1400px] px-4 sm:px-8 mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        {steps.map((step, idx) => (
+          <div
+            key={idx}
+            className="group flex flex-col items-center justify-center p-8 bg-white/70 backdrop-blur-lg border border-gray-200 rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+          >
+            <div className="mb-6 h-[90px] w-[90px] flex items-center justify-center rounded-2xl bg-gradient-to-b from-blue-600 to-blue-300 text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+              {step.icon}
             </div>
-          ))}
+            <h2 className="text-xl font-bold text-gray-900">{step.heading}</h2>
+            <p className="text-gray-600 mt-3 text-center">{step.description}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* CTA Section */}
+      <div className="w-full max-w-[1400px] mt-16 flex flex-col md:flex-row items-center gap-8">
+        
+        {/* Left Content */}
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center md:text-left p-4 sm:p-8">
+          <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl text-gray-900">
+            Ready to Start Your Journey?
+          </h2>
+          <p className="text-lg sm:text-xl mt-4 text-gray-700">
+            Whether you're looking to buy premium code or sell your own creations, CodeShare provides the perfect platform for developers.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <button className="px-8 py-3 rounded-xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition duration-300">
+              Join as Buyer
+            </button>
+            <button className="px-8 py-3 rounded-xl border-2 border-blue-700 text-blue-700 font-semibold hover:bg-blue-50 hover:shadow-lg transition duration-300">
+              Become Seller
+            </button>
+          </div>
         </div>
-        <div className='w-full flex flex-col md:flex-row items-center gap-6 md:gap-x-5 h-auto md:h-[400px]'>
-          <div className='w-full md:w-1/2 h-auto md:h-[95%] p-2 sm:p-6 flex flex-col justify-center items-center'>
-            <h1 className='font-bold text-2xl sm:text-3xl md:text-4xl pt-4 md:pt-10'>Ready to Start Your Journey?</h1>
-            <p className='text-lg sm:text-xl md:text-2xl text-gray-800 pt-4 sm:pt-6'>Whether you're looking to buy premium code or sell your own creations, CodeShare provides the perfect platform for developers.</p>
-            <div className='h-auto w-full mt-6 md:mt-[50px] font-medium text-lg sm:text-xl gap-4 sm:gap-6 flex flex-col sm:flex-row items-center justify-center'>
-              <button className='px-8 sm:px-10 py-3 sm:py-4 border-4 text-white rounded-xl bg-blue-700 hover:bg-blue-900'>Join as buyer</button>
-              <button className='px-8 sm:px-9 py-3 sm:py-4 rounded-xl text-blue-700 font-medium border-blue-950 border-4 hover:bg-gray-200'>Become Seller</button>
-            </div>
-          </div>
-          <div className='w-full md:w-1/2 h-auto md:h-[95%] flex items-center justify-center rounded-2xl mt-6 md:mt-0'>
-            <img src={blogImg} alt="Blog Visual" className='h-[200px] sm:h-[300px] md:h-[95%] w-full md:w-[95%] object-cover rounded-2xl opacity-100' />
-          </div>
+
+        {/* Right Image */}
+        <div className="w-full md:w-1/2 flex items-center justify-center">
+          <img
+            src={blogImg}
+            alt="Blog Visual"
+            className="rounded-2xl shadow-2xl object-cover h-[250px] sm:h-[350px] md:h-[400px] w-full md:w-[90%] transition-transform duration-500 hover:scale-105"
+          />
         </div>
       </div>
-       
-     
-        
     </div>
-  )
+  );
 }
 
-export default Blog
+export default Blog;
