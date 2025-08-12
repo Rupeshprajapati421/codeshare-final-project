@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import './App.css';
-import AllProduct from './Pages/AllProduct';
+import Allproduct from './Pages/Allproduct';
 import {BrowserRouter as Router, Routes,Route } from 'react-router-dom'
 import Login from './Components/Login';
 
@@ -15,7 +15,7 @@ function App() {
      <Router>
 
       <Routes>
-      <Route path="/" element={<AllProduct />} />
+      <Route path="/" element={<Allproduct />} />
       <Route path="/login" element={<Login />} />
      
      </Routes>
