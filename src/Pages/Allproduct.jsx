@@ -14,7 +14,7 @@ import Footer from '../Components/Footer';
 
 
 
-function Allproduct() {
+function AllProduct() {
 
 
   return (
@@ -32,4 +32,4 @@ function Allproduct() {
 }
 
 
-export default Allproduct
+export default AllProduct
