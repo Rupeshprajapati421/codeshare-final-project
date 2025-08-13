@@ -11,6 +11,14 @@ function Allcategories() {
     { name: "Game Development", desc: "Unity, Unreal Engine, Godot projects." },
     { name: "WordPress & CMS", desc: "Themes, plugins, templates." },
     { name: "Cloud & DevOps", desc: "Docker, Kubernetes, AWS deployment scripts." },
+    { name: "Desktop Applications", desc: " Electron, WPF, JavaFX, Tkinter, etc." },
+    { name: "Frontend Components", desc: "Buttons, navbars, cards, modals, etc." },
+    { name: "Blockchain & Web3", desc: " Smart contracts, NFTs, DApps." },
+    { name: "Educational", desc: "Tutorials, example projects." },
+    { name: "Testing & QA", desc: "P Unit tests, Cypress, Selenium.." },
+    { name: "Automation Scripts", desc: "Python, Bash, PowerShell scripts." },
+    { name: "Others", desc: "Anything that doesn’t fit in the above." },
+    
   ];
 
   return (
