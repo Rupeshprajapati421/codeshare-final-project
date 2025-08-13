@@ -30,7 +30,7 @@ function Login() {
             <input
               type="password"
               placeholder="Enter your password"
-              className="w-full px-3 py-2 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full px-3 py-2 rounded-md text-black bg-white  focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
           </div>
 
