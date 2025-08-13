@@ -1,30 +1,25 @@
+// App.jsx
 import React from 'react';
-import { useState } from 'react';
 import './App.css';
 import Allproduct from './Pages/Allproduct';
-import {BrowserRouter as Router, Routes,Route } from 'react-router-dom'
-import Login from './Components/Login';
-
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Signin from './Components/Signin.jsx';
+import Login from './Components/Login.jsx'; // Capitalized import
+import Allcategories from './Components/Allcategories.jsx';
 
 function App() {
-
-
   return (
     <>
-     <Router>
-
-      <Routes>
-      <Route path="/" element={<Allproduct />} />
-      <Route path="/login" element={<Login />} />
-     
-     </Routes>
-     </Router>
-     
-      
+      <Router>
+        <Routes>
+          <Route path="/" element={<Allproduct />} />
+          <Route path="/Signin" element={<Signin />} />
+          <Route path="/login" element={<Login />} /> 
+          <Route path="/Allcategories" element={<Allcategories />} /> 
+        </Routes>
+      </Router>
     </>
-  )
+  );
 }
 
-
-export default App
+export default App;

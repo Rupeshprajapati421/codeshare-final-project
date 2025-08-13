@@ -10,7 +10,7 @@ function Footer() {
           <h1 className="font-extrabold text-3xl md:text-4xl text-white tracking-wide">
             <span className="text-blue-400">Code</span>share
           </h1>
-          <p className="text-blue-100 pt-4 text-center md:text-left text-base md:text-lg leading-relaxed">
+          <p className="text-blue-100 pt-4 text-center tetx-[15px] md:text-left text-base  leading-relaxed">
             The ultimate marketplace for developers to discover, purchase, and sell high-quality code snippets and templates.
           </p>
         </div>
@@ -33,10 +33,11 @@ function Footer() {
           <div key={idx} className="w-full sm:w-[300px] md:w-[200px]">
             <ul className="flex flex-col gap-2 md:gap-3">
               <li className="font-semibold text-lg md:text-xl text-blue-300">{section.title}</li>
+             
               {section.links.map((link, i) => (
                 <li
                   key={i}
-                  className="text-blue-100 hover:text-blue-400 transition-colors cursor-pointer"
+                  className="text-blue-100 text-[15px] hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   {link}
                 </li>

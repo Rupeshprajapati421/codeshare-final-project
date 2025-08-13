@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { auth } from '../firebase'; // your firebase.js file
+import { onAuthStateChanged, signOut } from 'firebase/auth';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const navLinks = [
     { label: 'Home', href: '#home' },
@@ -10,6 +13,19 @@ function Navbar() {
     { label: 'Sell Code', href: '#sell-code' },
     { label: 'Blog', href: '#blog' },
   ];
+
+  // Detect user login/logout
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setIsLoggedIn(!!user);
+    }); 
+    return () => unsubscribe();
+  }, []);
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    setIsLoggedIn(false);
+  };
 
   return (
     <header className="w-full fixed top-0 left-0 z-[1000] bg-white shadow-md">
@@ -43,17 +59,25 @@ function Navbar() {
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex items-center gap-5">
-          <a
-            href="#signin"
-            className="text-[17px] hover:text-blue-600 transition-colors"
-          >
-            Signin
-          </a>
-          <Link to="/login">
-            <button className="px-5 py-2 rounded-[10px] bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300 shadow-sm">
-              Get started
+          {!isLoggedIn ? (
+            <>
+              <Link to="/login" className="text-[17px] hover:text-blue-600">
+                login
+              </Link>
+              <Link to="/Signin">
+                <button className="px-5 py-2 rounded-[10px] bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300 shadow-sm">
+                  Get started
+                </button>
+              </Link>
+            </>
+          ) : (
+            <button
+              onClick={handleLogout}
+              className="px-5 py-2 rounded-[10px] bg-red-600 text-white hover:bg-red-700 transition-colors duration-300 shadow-sm"
+            >
+              Logout
             </button>
-          </Link>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -73,14 +97,14 @@ function Navbar() {
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M6 18L18 6M6 6l12 12"
-              ></path>
+              />
             ) : (
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M4 6h16M4 12h16M4 18h16"
-              ></path>
+              />
             )}
           </svg>
         </button>
@@ -105,21 +129,35 @@ function Navbar() {
           ))}
         </ul>
         <div className="flex flex-col items-center gap-4 pb-6">
-          <a
-            href="#signin"
-            onClick={() => setMenuOpen(false)}
-            className="text-[17px] hover:text-blue-600"
-          >
-            Signin
-          </a>
-          <Link to="/login">
+          {!isLoggedIn ? (
+            <>
+              <Link
+                to="/login"
+                onClick={() => setMenuOpen(false)}
+                className="text-[17px] hover:text-blue-600"
+              >
+                Login
+              </Link>
+              <Link to="/Signin">
+                <button
+                  onClick={() => setMenuOpen(false)}
+                  className="px-5 py-2 rounded-[10px] bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300 shadow-sm"
+                >
+                  Get started
+                </button>
+              </Link>
+            </>
+          ) : (
             <button
-              onClick={() => setMenuOpen(false)}
-              className="px-5 py-2 rounded-[10px] bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300 shadow-sm"
+              onClick={() => {
+                handleLogout();
+                setMenuOpen(false);
+              }}
+              className="px-5 py-2 rounded-[10px] bg-red-600 text-white hover:bg-red-700 transition-colors duration-300 shadow-sm"
             >
-              Get started
+              Logout
             </button>
-          </Link>
+          )}
         </div>
       </div>
     </header>

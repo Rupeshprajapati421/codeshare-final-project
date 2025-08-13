@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { FaReact } from 'react-icons/fa';
 import { Brain, Palette, LayoutTemplate, Smartphone, Database, Loader } from 'lucide-react';
+import Allcategories from './Allcategories';
 
 function Categories() {
   const categories = [
@@ -91,10 +93,12 @@ function Categories() {
       </div>
 
       {/* View All Button */}
-      <div className="flex justify-center mt-12">
+      <div  className="flex justify-center mt-12">
+       <Link to="/Allcategories">
         <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl font-semibold text-white text-lg shadow-lg hover:scale-105 transition-all duration-300">
           View All Categories
         </button>
+        </Link>
       </div>
     </div>
   );
