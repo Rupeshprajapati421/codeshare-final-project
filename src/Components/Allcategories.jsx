@@ -14,22 +14,24 @@ function Allcategories() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <h1 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-gray-950 to-gray-400 bg-clip-text text-transparent">All Categories</h1>
+    <div className="min-h-screen bg-white p-4 sm:p-6">
+      <h1 className="text-3xl  font-bold text-center mb-8 bg-gradient-to-r from-gray-950 to-gray-400 bg-clip-text text-transparent">
+        All Categories
+      </h1>
 
-      <div className="grid h-full w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 pt-8 ">
         {categories.map((category, index) => (
           <div
             key={index}
-            className="bg-gradient-to-r from-gray-100 to-gray-600 h-[170px] w-[400px] rounded-lg p-6 hover:shadow-lg transition shadow-2xl shadow-gray-950"
+            className="bg-gradient-to-r from-gray-100 to-gray-600 rounded-lg p-5 sm:p-6 hover:shadow-lg transition shadow-2xl shadow-gray-950 w-full max-w-[420px] mx-auto"
           >
             <a
               href="#"
-              className=" font-bold text-2xl    text-blue-800 hover:text-blue-800 hover:underline transition"
+              className="font-bold text-xl sm:text-2xl text-blue-800 hover:text-blue-800 hover:underline transition"
             >
               {category.name}
             </a>
-            <p className="mt-2 text-gray-600 ">{category.desc}</p>
+            <p className="mt-2 text-gray-600 text-sm sm:text-base">{category.desc}</p>
           </div>
         ))}
       </div>
