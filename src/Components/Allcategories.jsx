@@ -31,7 +31,7 @@ function Allcategories() {
         {categories.map((category, index) => (
           <div
             key={index}
-            className="bg-gradient-to-r from-gray-100 to-gray-600 rounded-lg p-5 sm:p-6 hover:shadow-lg transition shadow-2xl shadow-gray-950 w-full max-w-[420px] mx-auto"
+            className="bg-gradient-to-r from-gray-100 to-gray-600 rounded-lg p-5 sm:p-6 hover:shadow-lg transition shadow-xl shadow-gray-400 w-full max-w-[420px] mx-auto"
           >
             <a
               href="#"

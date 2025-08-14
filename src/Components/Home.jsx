@@ -1,5 +1,6 @@
 import React from "react";
 import image from "../assets/background.jpg";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -36,13 +37,18 @@ function Home() {
             </p>
 
             {/* Buttons */}
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link to="/explore">
               <button className="px-8 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-xl font-semibold text-lg shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
                 Browse Marketplace
               </button>
+              </Link>
+              <Link to="/Allcategories">
               <button className="px-8 py-4 border-2 border-white text-white rounded-xl font-semibold text-lg hover:bg-white hover:text-blue-700 transition-all duration-300">
                 Start Selling
               </button>
+              </Link>
             </div>
 
             {/* Stats */}

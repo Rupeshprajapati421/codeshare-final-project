@@ -7,6 +7,8 @@ import Signin from './Components/Signin.jsx';
 import Login from './Components/Login.jsx'; // Capitalized import
 import Allcategories from './Components/Allcategories.jsx';
 import {Toaster} from 'react-hot-toast'
+import Blog from './Components/Blog.jsx';
+import Explore from './Components/explore.jsx';
 
 function App() {
   return (
@@ -18,6 +20,10 @@ function App() {
           <Route path="/Signin" element={<Signin />} />
           <Route path="/login" element={<Login />} /> 
           <Route path="/Allcategories" element={<Allcategories />} /> 
+          <Route path="/Blog" element={<Blog/>} /> 
+          <Route path="/explore" element={<Explore />} /> 
+
+
         </Routes>
       </Router>
     </>

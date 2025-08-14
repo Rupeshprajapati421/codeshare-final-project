@@ -2,6 +2,7 @@ import React from "react";
 import dashboard from "../assets/dashboard.jpg";
 import ecommerce from "../assets/e-commerce.jpg";
 import mobile from "../assets/mobile.jpg";
+import { Link } from "react-router-dom";
 
 function Sellcode() {
   const sellcode = [
@@ -88,9 +89,11 @@ function Sellcode() {
       </div>
 
       {/* Explore More Button */}
+      <Link to="/explore">
       <button className="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg sm:text-xl mt-12 w-full max-w-xs mx-auto shadow-lg hover:scale-105 transition-all duration-300">
         Explore All Products
       </button>
+      </Link>
     </div>
   );
 }

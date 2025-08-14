@@ -11,7 +11,7 @@ function Navbar() {
     { label: 'Home', href: '#home' },
     { label: 'Categories', href: '#categories' },
     { label: 'Sell Code', href: '#sell-code' },
-    { label: 'Blog', href: '#blog' },
+    { label: 'Blog', href: '#Blog' },
   ];
 
   // Detect user login/logout
