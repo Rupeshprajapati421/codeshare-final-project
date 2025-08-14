@@ -8,7 +8,7 @@ import Login from './Components/Login.jsx'; // Capitalized import
 import Allcategories from './Components/Allcategories.jsx';
 import {Toaster} from 'react-hot-toast'
 import Blog from './Components/Blog.jsx';
-import Explore from './Components/explore.jsx';
+import Explore from './Components/Explore.jsx';
 
 function App() {
   return (

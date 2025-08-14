@@ -28,7 +28,7 @@ function Navbar() {
   };
 
   return (
-    <header className="w-full fixed top-0 left-0 z-[1000] bg-amber-800 shadow-md">
+    <header className="w-full fixed top-0 left-0 z-[1000] bg-white shadow-md">
       <div className="max-w-7xl mx-auto h-[70px] flex items-center justify-between px-4 md:px-8">
         
         {/* Logo */}
