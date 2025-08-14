@@ -1,7 +1,26 @@
 // Components/Login.jsx
-import React from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../firebase.jsx";
 
 function Login() {
+  
+  const[email,setEmail]=useState("");
+  const[password,setpassword]=useState("");
+  const navigate = useNavigate()
+
+  const handleLogin = async (e) => {
+      e.preventDefault();
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        console.log("Registered successfully!");
+        navigate("/")
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-800 via-gray-600 to-gray-300 p-4">
       <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 rounded-lg s p-8  max-w-md text-white shadow-lg w-full shadow-black">
@@ -12,14 +31,14 @@ function Login() {
         <p className="text-sm text-center text-gray-400 mb-6">
           Sign in with your email and password
         </p>
-
-        <form className="space-y-4">
+        
+        <form  onSubmit={handleLogin} className="space-y-4">
           {/* Email */}
           <div>
             <label className="block text-sm mb-1 ">Your Email</label>
-            <input
+            <input  
               type="email"
-              placeholder="Enter your email"
+              placeholder="Enter your email"  onChange={(e) => setEmail(e.target.value)}
               className="w-full px-3 py-2 rounded-md text-black bg-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
           </div>
@@ -29,7 +48,7 @@ function Login() {
             <label className="block text-sm mb-1">Your Password</label>
             <input
               type="password"
-              placeholder="Enter your password"
+              placeholder="Enter your password" onChange={(e) => setpassword(e.target.value)}
               className="w-full px-3 py-2 rounded-md text-black bg-white  focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
           </div>

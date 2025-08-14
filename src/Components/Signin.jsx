@@ -2,26 +2,44 @@ import React, { useState } from "react";
 import { auth } from "../firebase.jsx";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import sign from "../assets/signin.svg";
+import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate
+import toast from "react-hot-toast";
+import {BeatLoader} from "react-spinners"
+
 
 function Signin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [DOB, setDOB] = useState("");
+  const [isLoading,setIsLoading]=useState(false);
+  const navigate = useNavigate()
 
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
+      setIsLoading(true)
       await createUserWithEmailAndPassword(auth, email, password);
       console.log("Registered successfully!");
+      toast.success("signup Succesfully")
+      setTimeout(()=>{
+        navigate("/")
+      },1500)
     } catch (error) {
       console.error(error.message);
+    }finally{
+      setIsLoading(false)
     }
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-800 via-gray-600 to-gray-300 p-2 sm:p-4">
-      <div className="bg-white flex flex-col md:flex-row rounded-2xl shadow-lg 
+      {isLoading ? (
+        <div className="flex items-center justify-center h-full w-full">
+          <BeatLoader/>
+        </div>
+      ):(
+        <div className="bg-white flex flex-col md:flex-row rounded-2xl shadow-lg 
                       w-full max-w-sm sm:max-w-md md:max-w-5xl 
                       shadow-black overflow-hidden">
         
@@ -85,6 +103,7 @@ function Signin() {
           </form>
         </div>
       </div>
+      )}
     </div>
   );
 }

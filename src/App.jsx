@@ -6,10 +6,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Signin from './Components/Signin.jsx';
 import Login from './Components/Login.jsx'; // Capitalized import
 import Allcategories from './Components/Allcategories.jsx';
+import {Toaster} from 'react-hot-toast'
 
 function App() {
   return (
     <>
+    <Toaster />
       <Router>
         <Routes>
           <Route path="/" element={<Allproduct />} />
