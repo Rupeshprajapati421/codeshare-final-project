@@ -3,6 +3,8 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase.jsx";
+import { Link } from "react-router-dom";
+
 
 function Login() {
   
@@ -74,11 +76,14 @@ function Login() {
 
           {/* Register Link */}
           <p className="text-center text-sm mt-4 text-gray-400">
-            Not a member?{" "}
-            <a href="Signin" className="text-yellow-300 hover:text-yellow-400">
-              Register here!
-            </a>
-          </p>
+                Not a member?{" "}
+                   <Link
+              to="/Signin"
+              className="text-yellow-300 hover:text-yellow-400">
+               
+             Register here!
+              </Link>
+               </p>
         </form>
       </div>
     </div>
