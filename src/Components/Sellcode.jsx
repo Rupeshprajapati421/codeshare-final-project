@@ -30,7 +30,10 @@ function Sellcode() {
   ];
 
   return (
-    <div id="sell-code" className="w-full flex-col justify-center text-center p-6 sm:p-10 md:p-16 bg-gradient-to-b from-white via-gray-50 to-white">
+    <div
+      id="sell-code"
+      className="w-full flex-col justify-center text-center p-6 sm:p-10 md:p-16 bg-gradient-to-b from-white via-gray-50 to-white"
+    >
       {/* Section Heading */}
       <div className="w-full max-w-6xl mx-auto flex flex-col items-center">
         <h1 className="font-extrabold text-4xl sm:text-5xl md:text-6xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -45,7 +48,7 @@ function Sellcode() {
           {["Trending", "Newest", "Best Sellers"].map((label, index) => (
             <button
               key={index}
-              className="px-6 py-2 rounded-xl font-semibold text-gray-700 bg-gray-100 hover:bg-blue-600 hover:text-white transition-all duration-300"
+              className="px-6 py-2 rounded-xl font-semibold text-gray-700 bg-gray-100 hover:bg-blue-600 hover:text-white transition-colors duration-300"
             >
               {label}
             </button>
@@ -58,20 +61,22 @@ function Sellcode() {
         {sellcode.map((item, idx) => (
           <div
             key={idx}
-            className="h-[460px] w-[95vw] max-w-[350px] md:h-[500px] md:w-[420px] bg-white rounded-2xl shadow-lg hover:shadow-2xl flex flex-col overflow-hidden hover:-translate-y-2 transition-all duration-300"
+            className="h-[460px] w-[95vw] max-w-[350px] md:h-[500px] md:w-[420px] rounded-2xl shadow-lg flex flex-col overflow-hidden group transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl"
           >
             {/* Product Image */}
-            <div className="h-[200px] sm:h-[230px] md:h-[250px] w-full overflow-hidden">
+            <div className="h-[200px] sm:h-[230px] md:h-[250px] w-full overflow-hidden relative">
               <img
                 src={item.image}
                 alt={item.heading}
-                className="h-full w-full object-cover hover:scale-105 transition-transform duration-500"
+                className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>
 
             {/* Product Info */}
             <div className="flex flex-col flex-grow p-5 text-left">
-              <h2 className="font-bold text-xl sm:text-2xl mb-2">{item.heading}</h2>
+              <h2 className="font-bold text-xl sm:text-2xl mb-2">
+                {item.heading}
+              </h2>
               <p className="text-gray-600 mb-3 text-base sm:text-lg">
                 {item.description}
               </p>
@@ -80,7 +85,7 @@ function Sellcode() {
               </p>
 
               {/* Buy Button */}
-              <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 mt-auto">
+              <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold transition-colors duration-300 hover:from-blue-500 hover:to-purple-500 mt-auto">
                 {item.button}
               </button>
             </div>
@@ -90,9 +95,9 @@ function Sellcode() {
 
       {/* Explore More Button */}
       <Link to="/explore">
-      <button className="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg sm:text-xl mt-12 w-full max-w-xs mx-auto shadow-lg hover:scale-105 transition-all duration-300">
-        Explore All Products
-      </button>
+        <button className="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg sm:text-xl mt-12 w-full max-w-xs mx-auto shadow-lg hover:scale-105 transition-all duration-300">
+          Explore All Products
+        </button>
       </Link>
     </div>
   );
