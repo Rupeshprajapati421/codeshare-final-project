@@ -8,10 +8,11 @@ import {BeatLoader} from "react-spinners"
 
 
 function Signin() {
-  const [username, setUsername] = useState("");
+  const [Firstname, setFirstname] = useState("");
+  const [Lastname, setLastname] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [DOB, setDOB] = useState("");
+
   const [isLoading,setIsLoading]=useState(false);
   const navigate = useNavigate()
 
@@ -67,9 +68,16 @@ function Signin() {
           <form onSubmit={handleRegister}>
             <input
               type="text"
-              placeholder="Full Name"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              placeholder="First Name"
+              value={Firstname}
+              onChange={(e) => setFirstname(e.target.value)}
+              className="w-full mb-3 sm:mb-4 p-2 sm:p-3 border rounded-lg focus:outline-none focus:border-blue-500"
+            />
+            <input
+              type="text"
+              placeholder="last Name"
+              value={Lastname}
+              onChange={(e) => setLastname(e.target.value)}
               className="w-full mb-3 sm:mb-4 p-2 sm:p-3 border rounded-lg focus:outline-none focus:border-blue-500"
             />
             <input
@@ -79,13 +87,7 @@ function Signin() {
               onChange={(e) => setEmail(e.target.value)}
               className="w-full mb-3 sm:mb-4 p-2 sm:p-3 border rounded-lg focus:outline-none focus:border-blue-500"
             />
-            <input
-              type="date"
-              placeholder="DOB"
-              value={DOB}
-              onChange={(e) => setDOB(e.target.value)}
-              className="w-full mb-3 sm:mb-4 p-2 sm:p-3 border rounded-lg focus:outline-none focus:border-blue-500"
-            />
+           
             <input
               type="password"
               placeholder="Password"
