@@ -9,6 +9,7 @@ import Blog from '../Components/Blog';
 import Sellcode from "../Components/Sellcode"; 
 
 import Footer from '../Components/Footer';
+import Contactform from '../Components/Contactform';
 
 
 
@@ -24,6 +25,7 @@ function Allproduct() {
       <Home/>
       <Categories/>
       <Sellcode/>
+      <Contactform/>
       <Blog/>
       <Footer/>
       
