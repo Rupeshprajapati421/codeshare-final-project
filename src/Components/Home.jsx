@@ -23,7 +23,7 @@ function Home() {
             {/* Heading */}
             <h1 className="space-y-2">
               <span className="block font-extrabold text-4xl sm:text-6xl md:text-7xl text-white tracking-tight">
-                Buy & Sell and purchase
+                Buy & Sell and purchase and marketing
               </span>
               <span className="block font-extrabold text-4xl sm:text-6xl md:text-7xl bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent tracking-tight">
                 Premium Code
